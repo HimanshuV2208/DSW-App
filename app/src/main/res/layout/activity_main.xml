@@ -4,48 +4,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="25dp"
-        android:gravity="center"
-        android:text="SIGN IN"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:id="@+id/signInPlaceholer">
-    </TextView>
-
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/signInPlaceholer"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-        android:layout_marginHorizontal="40dp"
-        android:textSize="20sp"
-        android:inputType="textPersonName"
-        android:hint="Username"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:drawablePadding="10dp">
-    </EditText>
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/username"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-        android:layout_marginHorizontal="40dp"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
-        android:drawablePadding="10dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textSize="20sp">
-    </EditText>
-
-</RelativeLayout>
+    tools:context=".MainActivity"/>
