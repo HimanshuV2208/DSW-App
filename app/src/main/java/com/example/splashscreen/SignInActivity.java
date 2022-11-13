@@ -12,7 +12,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 public class SignInActivity extends AppCompatActivity {
 
-    private TextView notRegText;
+    private TextView notRegText, signUpText;
     private EditText inputEmail, inputPassword;
     private AppCompatButton signInBtn;
 
@@ -22,14 +22,15 @@ public class SignInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        signInBtn = (AppCompatButton)findViewById(R.id.signInButton);
-        notRegText = (TextView)findViewById(R.id.notRegTxt);
-        inputEmail = (EditText)findViewById(R.id.emailEditText);
-        inputPassword = (EditText)findViewById(R.id.passwordEditText);
+        signInBtn = findViewById(R.id.signInButton);
+        notRegText = findViewById(R.id.notRegTxt);
+        signUpText = findViewById(R.id.signUpTxt);
+        inputEmail = findViewById(R.id.emailEditText);
+        inputPassword = findViewById(R.id.passwordEditText);
 
         //go from sign in to sign up
         Intent goSignUp = new Intent(SignInActivity.this, SignUpActivity.class);
-        notRegText.setOnClickListener(new View.OnClickListener() {
+        signUpText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(goSignUp);
