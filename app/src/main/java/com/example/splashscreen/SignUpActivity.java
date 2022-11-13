@@ -11,7 +11,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private TextView alrRegText;
+    private TextView alrRegText, signInTxt;
     private AppCompatButton signUpBtn;
     private EditText inputEmail, inputPassword, inputConfirmPassword;
 
@@ -23,13 +23,14 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         alrRegText = findViewById(R.id.alrRegTxt);
+        signInTxt = findViewById(R.id.clickableTxt);
         signUpBtn = findViewById(R.id.signUpButton);
         inputEmail = findViewById(R.id.emailEditText);
         inputPassword = findViewById(R.id.passwordEditText);
         inputConfirmPassword = findViewById(R.id.confirmPasswordEditText);
 
         //go from sign up to sign in
-        alrRegText.setOnClickListener(new View.OnClickListener() {
+        signInTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -43,8 +44,7 @@ public class SignUpActivity extends AppCompatActivity {
                 email = inputEmail.getText().toString();
                 password = inputPassword.getText().toString();
                 confirmPassword = inputConfirmPassword.getText().toString();
-                boolean matchingPasswords = validatePasswords(password, confirmPassword);
-                boolean canContinue = validateEmail(email) && matchingPasswords;
+                boolean canContinue = validateEmail(email) && validatePasswords(password, confirmPassword);
             }
         });
     }
@@ -69,6 +69,11 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean validatePasswords(String pass1, String pass2){
         if(pass1.isEmpty() ||pass2.isEmpty()){
             Toast.makeText(getApplicationContext(), "Password cannot be empty!",
+                    Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(pass1.length()<6 || pass2.length()<6){
+            Toast.makeText(getApplicationContext(), "Password must have at least 6 characters!",
                     Toast.LENGTH_SHORT).show();
             return false;
         }
