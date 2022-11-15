@@ -28,7 +28,6 @@ public class SignUpActivity extends AppCompatActivity {
         inputEmail = findViewById(R.id.emailEditText);
         inputPassword = findViewById(R.id.passwordEditText);
         inputConfirmPassword = findViewById(R.id.confirmPasswordEditText);
-
         //go from sign up to sign in
         signInTxt.setOnClickListener(new View.OnClickListener() {
             @Override
