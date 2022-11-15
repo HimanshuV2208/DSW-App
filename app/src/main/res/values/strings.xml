@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SplashScreen</string>
+    <string name="toolbar_open">Open Navigation Drawer</string>
+    <string name="toolbar_closed">Close Navigation Drawer</string>
 </resources>

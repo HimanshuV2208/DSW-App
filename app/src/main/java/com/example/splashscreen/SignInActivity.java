@@ -38,7 +38,7 @@ public class SignInActivity extends AppCompatActivity {
         });
 
         //go from sign in to home screen
-        Intent goMain = new Intent(SignInActivity.this, MainActivity.class);
+        Intent goHome = new Intent(SignInActivity.this, HomeActivity.class);
 
         //On button press
         signInBtn.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +48,7 @@ public class SignInActivity extends AppCompatActivity {
                 password = inputPassword.getText().toString();
                 boolean canContinue = validateEmail(email) && validatePassword(password);
                 if(canContinue) {
-                    startActivity(goMain);
+                    startActivity(goHome);
                     finish();
                 }
             }

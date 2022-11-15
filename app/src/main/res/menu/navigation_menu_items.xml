@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/optionHome"
+        android:icon="@drawable/ic_baseline_home_24"/>
+
+    <item android:title="About DSW"
+        android:id="@+id/optionDSW"
+        android:icon="@drawable/ic_baseline_question_mark_24"/>
+
+    <item android:title="Societies"
+        android:id="@+id/optionSocieties"
+        android:icon="@drawable/ic_baseline_people_24"/>
+
+    <item android:title="FAQ"
+        android:id="@+id/optionFAQ"
+        android:icon="@drawable/ic_baseline_question_mark_24"/>
+
+    <item android:title="Upcoming Events"
+        android:id="@+id/optionEvents"
+        android:icon="@drawable/ic_baseline_event_note_24"/>
+
+    <item android:title="Lost and Found"
+        android:id="@+id/optionLostNFound"
+        android:icon="@drawable/ic_baseline_currency_rupee_24"/>
+
+    <item android:title="Campus"
+        android:id="@+id/optionCampus"
+        android:icon="@drawable/ic_baseline_house_24"/>
+
+    <item android:title="Feedback and Complain"
+        android:id="@+id/optionFeedbackNComplain"
+        android:icon="@drawable/ic_baseline_feedback_24"/>
+
+    <item android:title="GTFO"
+        android:id="@+id/optionSignOut"
+        android:icon="@drawable/ic_baseline_logout_24"/>
+</menu>
