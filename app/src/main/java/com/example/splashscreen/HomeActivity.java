@@ -30,21 +30,25 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //changes color of notification bar to black
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.black, this.getTheme()));
         } else {
             getWindow().setStatusBarColor(getResources().getColor(R.color.black));
         }
+
         setContentView(R.layout.side_nav_menu);
 
+        //loading default home fragment into container
         loadFragment(new HomeFragment());
 
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.sideNavBar);
         toolbar = findViewById(R.id.toolbar);
 
+        //display top toolbar and add side navigation bar
         setSupportActionBar(toolbar);
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.toolbar_open, R.string.toolbar_closed);
         drawerLayout.addDrawerListener(toggle);
@@ -53,6 +57,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+                //checking which option is clicked on
                 int id = item.getItemId();
                 if(id == R.id.optionHome)
                     loadFragment(new HomeFragment());
@@ -70,6 +75,10 @@ public class HomeActivity extends AppCompatActivity {
                     loadFragment(new CampusFragment());
                 else if(id == R.id.optionFeedbackNComplain)
                     loadFragment(new FeedbackFragment());
+                else if(id == R.id.optionSports)
+                    loadFragment(new SportsFragment());
+                else if(id==R.id.optionHostels)
+                    loadFragment(new HostelFragment());
                 else if(id == R.id.optionSignOut)
                     Toast.makeText(getApplicationContext(), "GTFO", Toast.LENGTH_SHORT).show();
 
@@ -81,13 +90,16 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    //press back twice to close the app
     @Override
     public void onBackPressed(){
+
+        //if drawer is open, close it on back press
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
             return;
         }
+
+        //press back twice to close the app
         if(TIME_TO_PRESS_BACK + backPressed > System.currentTimeMillis()){
             super.onBackPressed();
             return;
@@ -98,11 +110,15 @@ public class HomeActivity extends AppCompatActivity {
         backPressed = System.currentTimeMillis();
     }
 
+    //load fragment into the frame
     private void loadFragment(Fragment fragment){
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
-        ft.replace(R.id.container, fragment);
+        ft.setCustomAnimations(
+                R.anim.fade_in_short,
+                R.anim.fade_out
+        ).replace(R.id.container, fragment);
         ft.commit();
     }
 }

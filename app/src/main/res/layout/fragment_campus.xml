@@ -1,16 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CampusFragment"
-    android:gravity="center">
+    android:background="@drawable/gradient">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Campus"
-        android:textSize="50sp"/>
+        android:orientation="vertical"
+        android:showDividers="middle|end"
+        android:divider="@drawable/divider_plain"
+        android:layout_marginHorizontal="10dp">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="1">
+
+            <TextView
+                style="@style/HeadingText"
+                android:text="CAMPUS"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_weight=".4"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/mnit_logo"
+                android:layout_weight="0.6"
+                android:contentDescription="MNIT Logo"
+                android:layout_gravity="center_horizontal">
+            </ImageView>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/campus_introduction_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/campus_introduction"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/about_campus_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_campus"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/library_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/library"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/canteen_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/canteen"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/guest_houses_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/guest_house"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/sports_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/sports"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/banks_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/banks"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/post_office_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/post_office"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/medical_facilities_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/dispensary"/>
+    </LinearLayout>
+
+</ScrollView>

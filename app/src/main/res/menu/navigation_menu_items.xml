@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Home"
         android:id="@+id/optionHome"
@@ -33,6 +32,14 @@
     <item android:title="Feedback and Complain"
         android:id="@+id/optionFeedbackNComplain"
         android:icon="@drawable/ic_baseline_feedback_24"/>
+
+    <item android:title="Sports"
+        android:id="@+id/optionSports"
+        android:icon="@drawable/ic_baseline_sports_24"/>
+
+    <item android:title="Hostels"
+        android:id="@+id/optionHostels"
+        android:icon="@drawable/ic_baseline_house_24"/>
 
     <item android:title="GTFO"
         android:id="@+id/optionSignOut"

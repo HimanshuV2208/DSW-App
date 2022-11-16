@@ -2,4 +2,26 @@
     <string name="app_name">SplashScreen</string>
     <string name="toolbar_open">Open Navigation Drawer</string>
     <string name="toolbar_closed">Close Navigation Drawer</string>
+
+    <string name="campus_introduction">The Institute lies in the heart of the pink city, imaginatively laid out with a picturesque landscape of 317 acres. It presents a spectacle of harmony in modern architecture and natural beauty. The campus is in close proximity of Jaipur airport, railway station, major hospitals, and shopping malls. It consists of academic and administrative buildings, hostels, and on-campus accommodation for faculty and staff. The campus provides all essential amenities for community living like staff club, primary health centre (dispensary), bank, post office, shopping complex, gymnasium, playing fields, guest houses and canteen.</string>
+    <string name="about_campus">Extending into an area of over 312 acres of lush greenery, the campus of the Institute is imaginatively laid-out with a picturesque landscape. It presents a spectacle of harmony in modern architecture, and natural beauty which enthrals and inspires. Indeed, all the states and union territories of the country are represented in the undergraduate intake of the Institute (50% from Rajasthan and the other 50% from all States and Union Territories of India), thus making it a perfect example of the celebrated axiom, ‘unity in diversity’. The institute is actively engaged in research, consultancy and development activities and collaborates with leading industrial houses and IT companies in various projects. The campus provides all essential amenities for community living like staff clubs, hospital, bank, post office, community centre, school, staff residences, gymnasium, playing fields, guest houses and canteen etc.</string>
+    <string name="library">The Institute has a spacious and well-equipped library which is being run according to an open access system. It has rich collection of about 1,33,600 volumes of books, periodicals, reports and reference material. In addition to the books from main library, some more books are issued to students from book bank also. There is a video viewing facility. Large number of books, periodicals, video cassettes and CD-ROMs are available. The library is being fully computerized.</string>
+    <string name="canteen">One canteen near the instructional zone, another near the hostels and one Nescafe coffee shop provides refreshments to the students and the staff during and beyond the working hours.</string>
+    <string name="guest_house">There are two guest houses in the campus to cater the needs of guests and students.</string>
+    <string name="sports">Adequate facilities are available for sports and games and for co-curricular activities. The campus is well laid out with roads, electrical installations, water supply and underground drainage system etc.</string>
+    <string name="banks">There is a branch of the ICICI Bank Ltd. and SBI Bank in the campus. Other reputed banks such as SBI, OBC, and PNB etc. are within walking distance from the institute campus.</string>
+    <string name="post_office">There is a Post Office in the campus of MNIT.</string>
+    <string name="dispensary">A full-fledged Dispensary is available in the campus. It is supervised by a residential Medical Officer. The services of a part-time Homeopathy Doctor and a Lady Doctor are also available to students and to the family members of the staff.</string>
+    <string name="canteen_text"><u>Canteen</u></string>
+    <string name="campus_introduction_text"><u>Campus Introduction</u></string>
+    <string name="about_campus_text"><u>About Campus</u></string>
+    <string name="library_text"><u>Library</u></string>
+    <string name="guest_houses_text"><u>Guest Houses</u></string>
+    <string name="sports_text"><u>Sports</u></string>
+    <string name="banks_text"><u>Banks</u></string>
+    <string name="post_office_text"><u>Post-Office</u></string>
+    <string name="medical_facilities_text"><u>Medical Facilities</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
