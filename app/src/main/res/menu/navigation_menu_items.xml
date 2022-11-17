@@ -41,6 +41,10 @@
         android:id="@+id/optionHostels"
         android:icon="@drawable/ic_baseline_house_24"/>
 
+    <item android:title="Add an Event"
+        android:id="@+id/optionNewEvent"
+        android:icon="@drawable/ic_baseline_house_24"/>
+
     <item android:title="GTFO"
         android:id="@+id/optionSignOut"
         android:icon="@drawable/ic_baseline_logout_24"/>

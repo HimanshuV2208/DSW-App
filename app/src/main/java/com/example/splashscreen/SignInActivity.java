@@ -48,6 +48,12 @@ public class SignInActivity extends AppCompatActivity {
                 password = inputPassword.getText().toString();
                 boolean canContinue = validateEmail(email) && validatePassword(password);
                 if(canContinue) {
+
+                    // TODO: 17-11-2022 remove this after testing for permissions
+                    boolean isAdmin = false;
+                    if(email.equalsIgnoreCase("2020uee1445@mnit.ac.in")) isAdmin=true;
+                    goHome.putExtra("isAdmin", isAdmin);
+
                     startActivity(goHome);
                     finish();
                 }

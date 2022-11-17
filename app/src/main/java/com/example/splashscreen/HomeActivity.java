@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -23,19 +24,22 @@ public class HomeActivity extends AppCompatActivity {
     private static final int TIME_TO_PRESS_BACK = 2000;
     private long backPressed;
 
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private Toolbar toolbar;
+
+    private boolean isAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getWindow().setNavigationBarColor(getResources().getColor(R.color.black));
         //changes color of notification bar to black
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.black, this.getTheme()));
         } else {
             getWindow().setStatusBarColor(getResources().getColor(R.color.black));
+
         }
 
         setContentView(R.layout.side_nav_menu);
@@ -47,6 +51,19 @@ public class HomeActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.sideNavBar);
         toolbar = findViewById(R.id.toolbar);
 
+        // TODO: 17-11-2022 remove this after testing
+        Bundle extras = getIntent().getExtras();
+        if(extras!=null){
+            isAdmin = extras.getBoolean("isAdmin");
+        }
+
+        //options to hide from normal user
+        //these are only visible to admin
+        if(!isAdmin) {
+            Menu navMenu = navigationView.getMenu();
+            navMenu.findItem(R.id.optionNewEvent).setVisible(false);
+        }
+
         //display top toolbar and add side navigation bar
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -56,7 +73,6 @@ public class HomeActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 //checking which option is clicked on
                 int id = item.getItemId();
                 if(id == R.id.optionHome)
@@ -77,8 +93,10 @@ public class HomeActivity extends AppCompatActivity {
                     loadFragment(new FeedbackFragment());
                 else if(id == R.id.optionSports)
                     loadFragment(new SportsFragment());
-                else if(id==R.id.optionHostels)
+                else if(id == R.id.optionHostels)
                     loadFragment(new HostelFragment());
+                else if(id == R.id.optionNewEvent)
+                    loadFragment(new AddEventFragment());
                 else if(id == R.id.optionSignOut)
                     Toast.makeText(getApplicationContext(), "GTFO", Toast.LENGTH_SHORT).show();
 

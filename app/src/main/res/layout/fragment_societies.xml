@@ -1,15 +1,284 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SocietiesFragment"
-    android:gravity="center">
+    android:background="@drawable/gradient">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SOCIETIES"
-        android:textSize="50sp"/>
-</LinearLayout>
+        android:orientation="vertical"
+        android:showDividers="middle|end"
+        android:divider="@drawable/divider_plain"
+        android:layout_marginHorizontal="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                style="@style/HeadingText"
+                android:text="Technical Societies"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/data_science"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_data_science"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/computer_science"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_computer_science"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/robotics"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_robotics"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/aeromodelling"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_aeromodelling"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/astronomy"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_astronomy"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/economics"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_economics"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/techcom"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_techcom"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/tinkering"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_tinkering"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/consultancy"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_consultancy"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/infosec"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_infosec"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/entrepreneurship"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_entrepreneur"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                style="@style/HeadingText"
+                android:text="Cultural Societies"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/classical_music_and_dance_club"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_classical_music_and_dance_club"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/creative_arts"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_creative_arts"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/dance"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_dance"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/debating"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_debating"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/drama"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_drama"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/english_language"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_english_language"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/english_press"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_english_press"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/film_making"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_film_making"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/hindi_language"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_hindi_language"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/hindi_press"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_hindi_press"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/music"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_music"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/photography"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_photography"/>
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/poetry"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_poetry"/>
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/think_india"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_think_india"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/nss"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_nss"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/travel"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_travel"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/electoral_literacy"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_electoral_literacy"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/quiz"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_quiz"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/mav"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_mav"/>
+
+    </LinearLayout>
+</ScrollView>
