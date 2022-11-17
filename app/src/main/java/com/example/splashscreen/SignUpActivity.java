@@ -9,6 +9,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class SignUpActivity extends AppCompatActivity {
 
     private TextView alrRegText, signInTxt;
@@ -16,6 +19,9 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText inputEmail, inputPassword, inputConfirmPassword;
 
     private String email, password, confirmPassword;
+
+    private FirebaseDatabase rootNode;
+    private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +50,12 @@ public class SignUpActivity extends AppCompatActivity {
                 password = inputPassword.getText().toString();
                 confirmPassword = inputConfirmPassword.getText().toString();
                 boolean canContinue = validateEmail(email) && validatePasswords(password, confirmPassword);
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("users");
+                UserHelper helperClass = new UserHelper(email, password);
+                reference.child(validId(email)).setValue(helperClass);
+                Toast.makeText(getApplicationContext(), "You are added to our database",
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -83,5 +95,17 @@ public class SignUpActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             return false;
         }
+    }
+
+    //remove @mnit.ac.in and special chars
+    private String validId(String str)
+    {
+        int l = str.length();
+        String nstr=str.substring(0, l-11), finalStr = "";
+        for(char c : nstr.toCharArray()){
+            if(Character.isLetterOrDigit(c))
+                finalStr+=c;
+        }
+        return finalStr;
     }
 }
