@@ -15,6 +15,6 @@
         android:text="Dean Student Welfare"
         android:textSize="50sp"
         android:textStyle="bold"
-        android:alpha="1.0"></TextView>
+        android:alpha="1.0" />
 
 </LinearLayout>

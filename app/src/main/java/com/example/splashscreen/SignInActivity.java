@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignInActivity extends AppCompatActivity {
 
-    private TextView notRegText, signUpText;
+    private TextView signUpText;
     private EditText inputEmail, inputPassword;
     private AppCompatButton signInBtn;
 
@@ -34,7 +34,6 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
         signInBtn = findViewById(R.id.signInButton);
-        notRegText = findViewById(R.id.notRegTxt);
         signUpText = findViewById(R.id.signUpTxt);
         inputEmail = findViewById(R.id.emailEditText);
         inputPassword = findViewById(R.id.passwordEditText);
@@ -61,8 +60,7 @@ public class SignInActivity extends AppCompatActivity {
                 if(canContinue) {
 
                     // TODO: 17-11-2022 remove this after testing for permissions
-                    boolean isAdmin = false;
-                    if(email.equalsIgnoreCase("2020uee1445@mnit.ac.in")) isAdmin=true;
+                    boolean isAdmin = email.equalsIgnoreCase("2020uee1445@mnit.ac.in");
                     goHome.putExtra("isAdmin", isAdmin);
 
                     rootNode= FirebaseDatabase.getInstance();
@@ -73,11 +71,14 @@ public class SignInActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if(snapshot.exists())
                             {
-                                String pas=snapshot.child(validId(email)).child("password").getValue(String.class);
+                                //gets the current user
+                                UserHelper current_user = snapshot.child(validId(email)).getValue(UserHelper.class);
+                                String pas = current_user.getPassword();
                                 if(pas.equals(password))
                                 {
                                     Toast.makeText(getApplicationContext(), "Welcome!",
                                             Toast.LENGTH_SHORT).show();
+                                    goHome.putExtra("class", current_user);
                                     startActivity(goHome);
                                     finish();
                                 }
@@ -108,7 +109,7 @@ public class SignInActivity extends AppCompatActivity {
 
     //checks if the input email is valid or not.
     private boolean validateEmail(String email){
-        if(email.isEmpty() || email.equals("")){
+        if(email.isEmpty()){
             Toast.makeText(getApplicationContext(), "E-Mail cannot be empty!",
                     Toast.LENGTH_SHORT).show();
             return false;
@@ -124,7 +125,7 @@ public class SignInActivity extends AppCompatActivity {
 
     //checks if the input password is valid or not.
     private boolean validatePassword(String password){
-        if(password.isEmpty() || password.equals("")){
+        if(password.isEmpty()){
             Toast.makeText(getApplicationContext(), "Password cannot be empty!",
                     Toast.LENGTH_SHORT).show();
             return false;

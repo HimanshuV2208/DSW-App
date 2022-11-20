@@ -14,6 +14,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -57,12 +59,20 @@ public class HomeActivity extends AppCompatActivity {
             isAdmin = extras.getBoolean("isAdmin");
         }
 
+        //gets the current user object
+        UserHelper currentUser = (UserHelper)getIntent().getSerializableExtra("class");
+
         //options to hide from normal user
         //these are only visible to admin
         if(!isAdmin) {
             Menu navMenu = navigationView.getMenu();
             navMenu.findItem(R.id.optionNewEvent).setVisible(false);
         }
+
+        //display username in drawer
+        View headerView = navigationView.getHeaderView(0);
+        TextView username = headerView.findViewById(R.id.username);
+        username.setText(currentUser.getEmail());
 
         //display top toolbar and add side navigation bar
         setSupportActionBar(toolbar);

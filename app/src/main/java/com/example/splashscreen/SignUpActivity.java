@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private TextView alrRegText, signInTxt;
+    private TextView signInTxt;
     private AppCompatButton signUpBtn;
     private EditText inputEmail, inputPassword, inputConfirmPassword;
 
@@ -28,7 +28,6 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        alrRegText = findViewById(R.id.alrRegTxt);
         signInTxt = findViewById(R.id.clickableTxt);
         signUpBtn = findViewById(R.id.signUpButton);
         inputEmail = findViewById(R.id.emailEditText);
@@ -50,12 +49,14 @@ public class SignUpActivity extends AppCompatActivity {
                 password = inputPassword.getText().toString();
                 confirmPassword = inputConfirmPassword.getText().toString();
                 boolean canContinue = validateEmail(email) && validatePasswords(password, confirmPassword);
-                rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("users");
-                UserHelper helperClass = new UserHelper(email, password);
-                reference.child(validId(email)).setValue(helperClass);
-                Toast.makeText(getApplicationContext(), "You are added to our database",
-                        Toast.LENGTH_SHORT).show();
+                if(canContinue){
+                    rootNode = FirebaseDatabase.getInstance();
+                    reference = rootNode.getReference("users");
+                    UserHelper helperClass = new UserHelper(email, password);
+                    reference.child(validId(email)).setValue(helperClass);
+                    Toast.makeText(getApplicationContext(), "You are added to our database.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

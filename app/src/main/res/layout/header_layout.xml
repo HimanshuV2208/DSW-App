@@ -7,7 +7,8 @@
     android:padding="14dp"
     android:showDividers="middle"
     android:divider="@drawable/divider_plain"
-    android:background="@drawable/gradient">
+    android:background="@drawable/gradient"
+    android:id="@+id/header_title">
 
     <ImageView
         android:layout_width="120dp"
@@ -21,14 +22,16 @@
         android:layout_height="wrap_content"
         android:text="DSW App "
         android:textSize="25sp"
-        android:textColor="@color/black">
+        android:textColor="@color/black"
+        android:id="@+id/username">
     </TextView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Test Mode "
-        android:textSize="18sp">
+        android:textSize="18sp"
+        android:id="@+id/username2">
     </TextView>
 
 </LinearLayout>
