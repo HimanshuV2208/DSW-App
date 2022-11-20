@@ -47,6 +47,7 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
+
         //go from sign in to home screen
         Intent goHome = new Intent(SignInActivity.this, HomeActivity.class);
 
@@ -65,7 +66,7 @@ public class SignInActivity extends AppCompatActivity {
 
                     rootNode= FirebaseDatabase.getInstance();
                     reference=rootNode.getReference("users");
-                    Query checkuser=reference.orderByChild("name").equalTo(email);
+                    Query checkuser=reference.orderByChild("email").equalTo(email);//rectified himmi
                     checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
