@@ -102,7 +102,7 @@ public class SignUpActivity extends AppCompatActivity {
     private String validId(String str)
     {
         int l = str.length();
-        String nstr=str.substring(0, l-11), finalStr = "";
+        String nstr=str.substring(0, l-11).toLowerCase(), finalStr = "";
         for(char c : nstr.toCharArray()){
             if(Character.isLetterOrDigit(c))
                 finalStr+=c;

@@ -59,14 +59,9 @@ public class SignInActivity extends AppCompatActivity {
                 password = inputPassword.getText().toString();
                 boolean canContinue = validateEmail(email) && validatePassword(password);
                 if(canContinue) {
-
-                    // TODO: 17-11-2022 remove this after testing for permissions
-                    boolean isAdmin = email.equalsIgnoreCase("2020uee1445@mnit.ac.in");
-                    goHome.putExtra("isAdmin", isAdmin);
-
                     rootNode= FirebaseDatabase.getInstance();
                     reference=rootNode.getReference("users");
-                    Query checkuser=reference.orderByChild("email").equalTo(email);//rectified himmi
+                    Query checkuser=reference.orderByChild("email").equalTo(email);
                     checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -138,7 +133,7 @@ public class SignInActivity extends AppCompatActivity {
     String validId(String str)
     {
         int l = str.length();
-        String nstr=str.substring(0, l-11), finalStr = "";
+        String nstr=str.substring(0, l-11).toLowerCase(), finalStr = "";
         for(char c : nstr.toCharArray()){
             if(Character.isLetterOrDigit(c))
                 finalStr+=c;

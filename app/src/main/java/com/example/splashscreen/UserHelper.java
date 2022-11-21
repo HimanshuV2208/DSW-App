@@ -1,5 +1,7 @@
 package com.example.splashscreen;
 
+import com.google.firebase.database.PropertyName;
+
 import java.io.Serializable;
 
 public class UserHelper implements Serializable {
@@ -10,6 +12,7 @@ public class UserHelper implements Serializable {
     public UserHelper(String email,String password) {
         this.password = password;
         this.email=email;
+        this.isAdmin=false;
     }
 
     public UserHelper() {
@@ -31,11 +34,14 @@ public class UserHelper implements Serializable {
         this.password = password;
     }
 
-    public boolean isFaculty() { return isFaculty; }
+    @PropertyName("isFaculty")
+    public boolean getIsFaculty() { return isFaculty; }
 
-    public boolean isGeneralSec() { return isGeneralSec; }
+    @PropertyName("isGeneralSec")
+    public boolean getIsGeneralSec() { return isGeneralSec; }
 
-    public boolean isAdmin() { return isAdmin; }
+    @PropertyName("isAdmin")
+    public boolean getIsAdmin() { return isAdmin; }
 
     public String getName() { return name; }
 

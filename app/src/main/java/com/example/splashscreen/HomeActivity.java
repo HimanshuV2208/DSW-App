@@ -53,18 +53,12 @@ public class HomeActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.sideNavBar);
         toolbar = findViewById(R.id.toolbar);
 
-        // TODO: 17-11-2022 remove this after testing
-        Bundle extras = getIntent().getExtras();
-        if(extras!=null){
-            isAdmin = extras.getBoolean("isAdmin");
-        }
-
         //gets the current user object
         UserHelper currentUser = (UserHelper)getIntent().getSerializableExtra("class");
 
         //options to hide from normal user
         //these are only visible to admin
-        if(!isAdmin) {
+        if(!(currentUser.getIsAdmin())) {
             Menu navMenu = navigationView.getMenu();
             navMenu.findItem(R.id.optionNewEvent).setVisible(false);
         }
