@@ -2,6 +2,8 @@ package com.example.splashscreen;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,16 +25,37 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseDatabase rootNode;
     private DatabaseReference reference;
 
+    private AutoCompleteTextView culClub, techClub, hostels;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        //drop down menu for cultural clubs
+        String[] culturalClubs = getApplicationContext().getResources().getStringArray(R.array.cultural_clubs);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.dropdown_item, culturalClubs);
+        culClub = (AutoCompleteTextView)findViewById(R.id.culturalClubTextView);
+        culClub.setAdapter(adapter1);
+
+        //drop down menu for technical clubs
+        String[] technicalClubs = getApplicationContext().getResources().getStringArray(R.array.technical_clubs);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.dropdown_item, technicalClubs);
+        techClub = (AutoCompleteTextView)findViewById(R.id.technicalClubTextView);
+        techClub.setAdapter(adapter2);
+
+        //drop down menu for hostels
+        String[] hostelsName = getApplicationContext().getResources().getStringArray(R.array.hostels);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, R.layout.dropdown_item, hostelsName);
+        hostels = (AutoCompleteTextView)findViewById(R.id.hostelTextView);
+        hostels.setAdapter(adapter3);
 
         signInTxt = findViewById(R.id.clickableTxt);
         signUpBtn = findViewById(R.id.signUpButton);
         inputEmail = findViewById(R.id.emailEditText);
         inputPassword = findViewById(R.id.passwordEditText);
         inputConfirmPassword = findViewById(R.id.confirmPasswordEditText);
+
         //go from sign up to sign in
         signInTxt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +75,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if(canContinue){
                     rootNode = FirebaseDatabase.getInstance();
                     reference = rootNode.getReference("users");
-                    UserHelper helperClass = new UserHelper(email, password);
+                    UserHelper helperClass = createUser(email, password);
                     reference.child(validId(email)).setValue(helperClass);
                     Toast.makeText(getApplicationContext(), "You are added to our database.",
                             Toast.LENGTH_SHORT).show();
@@ -108,5 +131,10 @@ public class SignUpActivity extends AppCompatActivity {
                 finalStr+=c;
         }
         return finalStr;
+    }
+
+    private UserHelper createUser(String email, String password){
+        UserHelper user = new UserHelper(email, password);
+        return user;
     }
 }
