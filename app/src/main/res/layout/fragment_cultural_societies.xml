@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SocietiesFragment"
+    tools:context=".TechnicalSocietiesFragment"
     android:background="@drawable/gradient">
 
     <LinearLayout
@@ -18,114 +18,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                style="@style/HeadingText"
-                android:text="Technical Societies"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content" />
-
-        </LinearLayout>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/data_science"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_data_science"/>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/computer_science"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_computer_science"/>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/robotics"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_robotics"/>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/aeromodelling"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_aeromodelling"/>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/astronomy"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_astronomy"/>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/economics"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_economics"/>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/techcom"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_techcom"/>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/tinkering"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_tinkering"/>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/consultancy"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_consultancy"/>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/infosec"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_infosec"/>
-
-        <TextView
-            style="@style/SubHeadingText"
-            android:text="@string/entrepreneurship"/>
-
-        <TextView
-            style="@style/BodyText"
-            android:text="@string/about_entrepreneur"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:gravity="center">
 
             <TextView
                 style="@style/HeadingText"
                 android:text="Cultural Societies"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content" />
 
         </LinearLayout>

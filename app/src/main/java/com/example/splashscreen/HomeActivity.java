@@ -83,8 +83,10 @@ public class HomeActivity extends AppCompatActivity {
                     loadFragment(new HomeFragment());
                 else if(id == R.id.optionDSW)
                     loadFragment(new AboutDSWFragment());
-                else if(id == R.id.optionSocieties)
-                    loadFragment(new SocietiesFragment());
+                else if(id == R.id.optionTechnicalSocieties)
+                    loadFragment(new TechnicalSocietiesFragment());
+                else if(id == R.id.optionCulturalSocieties)
+                    loadFragment(new CulturalSocietiesFragment());
                 else if(id == R.id.optionFAQ)
                     loadFragment(new FAQFragment());
                 else if(id == R.id.optionEvents)
