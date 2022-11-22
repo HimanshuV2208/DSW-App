@@ -1,17 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/gradient"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddEventFragment"
-    android:gravity="center">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ONLY VISIBLE TO ADMIN"
-        android:gravity="center"
-        android:textSize="50sp"/>
+        android:orientation="vertical">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_registration"
+            android:gravity="center"
+            android:text="Event Registration"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"/>
+
+        <EditText
+            android:id="@+id/event_name"
+            android:background="#30ffffff"
+            android:layout_marginTop="60dp"
+            android:hint="Event Name"
+            android:drawableStart="@drawable/ic_baseline_event_24"
+            android:inputType="text" 
+            style="@style/form_edit_text"
+            android:layout_marginHorizontal="20dp"/>
+
+        <EditText
+            android:id="@+id/host_club"
+            android:background="#30ffffff"
+            android:hint="Host Club"
+            android:drawableStart="@drawable/ic_baseline_group_work_24"
+            android:inputType="text"
+            style="@style/form_edit_text"
+            android:layout_marginHorizontal="20dp"/>
+
+        <EditText
+            android:id="@+id/venue"
+            android:background="#30ffffff"
+            android:hint="Venue"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
+            android:inputType="text"
+            style="@style/form_edit_text"
+            android:layout_marginHorizontal="20dp"/>
+
+        <EditText
+            android:id="@+id/event_date1"
+            android:background="#40ffffff"
+            android:hint="From"
+            android:inputType="date"
+            android:focusable="false"
+            android:drawableStart="@drawable/ic_baseline_date_range_24"
+            style="@style/form_edit_text"
+            android:layout_marginHorizontal="20dp"/>
+
+        <EditText
+            android:id="@+id/event_date2"
+            android:background="#40ffffff"
+            android:hint="To"
+            android:inputType="date"
+            android:focusable="false"
+            android:drawableStart="@drawable/ic_baseline_date_range_24"
+            style="@style/form_edit_text"
+            android:layout_marginHorizontal="20dp"/>
+
+        <EditText
+            android:id="@+id/event_time"
+            android:background="#50ffffff"
+            android:hint="Event Time"
+            android:drawableStart="@drawable/ic_baseline_access_time_24"
+            android:inputType="time"
+            android:focusable="false"
+            style="@style/form_edit_text"
+            android:layout_marginHorizontal="20dp"/>
+
+        <EditText
+            android:id="@+id/description"
+            android:background="#60ffffff"
+            android:hint="Description"
+            android:drawableStart="@drawable/ic_baseline_description_24"
+            android:inputType="textCapSentences|textMultiLine"
+            style="@style/form_edit_text"
+            android:layout_marginHorizontal="20dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_button"
+            android:text="REGISTER"
+            android:backgroundTint="@color/yellow"
+            android:layout_margin="12dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+</ScrollView>
