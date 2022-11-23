@@ -1,16 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LNFFragment"
-    android:gravity="center">
+    android:background="@drawable/gradient">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lost and Found"
-        android:textSize="50sp" />
+        android:orientation="vertical">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/lost_and_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Lost And Found"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"/>
+
+        <EditText
+            android:id="@+id/item_lost"
+            android:background="#30ffffff"
+            android:layout_marginTop="60dp"
+            android:hint="Item Lost"
+            android:drawableStart="@drawable/ic_baseline_post_add_24"
+            android:layout_marginHorizontal="20dp"
+            android:inputType="text"
+            style="@style/EditTextBoxStyle"/>
+
+        <EditText
+            android:id="@+id/lost_date"
+            android:background="#30ffffff"
+            android:hint="Lost Date"
+            android:drawableStart="@drawable/ic_baseline_today_24"
+            android:layout_marginHorizontal="20dp"
+            android:focusable="false"
+            style="@style/EditTextBoxStyle"/>
+
+        <EditText
+            android:id="@+id/last_seen"
+            android:background="#30ffffff"
+            android:hint="Last Seen"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
+            android:layout_marginHorizontal="20dp"
+            android:inputType="text"
+            style="@style/EditTextBoxStyle"/>
+
+        <EditText
+            android:id="@+id/description"
+            android:background="#30ffffff"
+            android:hint="Description"
+            android:drawableStart="@drawable/ic_baseline_description_24"
+            android:layout_marginHorizontal="20dp"
+            android:inputType="textCapSentences|textMultiLine"
+            style="@style/EditTextBoxStyle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_button"
+            android:text="REGISTER"
+            android:backgroundTint="@color/purple_500"
+            android:layout_margin="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+</ScrollView>
