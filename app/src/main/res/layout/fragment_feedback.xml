@@ -1,17 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FeedbackFragment"
-    android:gravity="center">
+    android:background="@drawable/gradient">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Feedback and Complaints"
-        android:gravity="center"
-        android:textSize="50sp"/>
+        android:orientation="vertical">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/feedback_and_complaint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Feedback And Complaint"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"/>
+
+        <EditText
+            android:id="@+id/subject"
+            android:background="#30ffffff"
+            android:layout_marginTop="60dp"
+            android:hint="Subject"
+            android:drawableStart="@drawable/ic_baseline_subject_24"
+            android:layout_marginHorizontal="20dp"
+            android:inputType="text"
+            style="@style/EditTextBoxStyle"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginHorizontal="20dp"
+            android:id="@+id/radio_group_feedback"
+            android:layout_marginTop="12dp"
+            android:showDividers="middle"
+            android:divider="@drawable/divider_plain_vertical">
+
+            <RadioButton
+                android:id="@+id/feedback_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Feedback"
+                android:padding="20dp"
+                android:textStyle="bold">
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/complaint_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Complaint"
+                android:padding="20dp"
+                android:textStyle="bold">
+            </RadioButton>
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/description"
+            android:background="#30ffffff"
+            android:hint="Description"
+            android:drawableStart="@drawable/ic_baseline_description_24"
+            android:layout_marginHorizontal="20dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="10"
+            style="@style/EditTextBoxStyle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_button"
+            android:text="REGISTER"
+            android:backgroundTint="@color/purple_500"
+            android:layout_margin="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+
+    </LinearLayout>
+
+</ScrollView>

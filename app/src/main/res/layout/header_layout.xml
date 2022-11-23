@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:padding="14dp"
     android:showDividers="middle"
-    android:divider="@drawable/divider_plain"
+    android:divider="@drawable/divider_plain_vertical"
     android:background="@drawable/gradient"
     android:id="@+id/header_title">
 
