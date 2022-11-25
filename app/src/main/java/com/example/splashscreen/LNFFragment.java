@@ -94,16 +94,26 @@ public class LNFFragment extends Fragment {
                             , Toast.LENGTH_LONG).show();
                     LostAndFoundHelper ticket = new LostAndFoundHelper(textItemLost, infoType, textLostDate,
                             textLastSeen, textDescription, user);
-                    // TODO: 25-11-2022 put this ticket in LNF database
+
+                    //Add ticket to database
                     rootNode = FirebaseDatabase.getInstance();
-                    reference = rootNode.getReference("users");
-
-                    reference.child(textItemLost).setValue(ticket);
-
+                    reference = rootNode.getReference(infoType);
+                    reference.child(removeSpecialChars(textItemLost)).setValue(ticket);
                 }
             }
         });
-
         return view;
+    }
+
+    //remove special chars
+    private String removeSpecialChars(String str)
+    {
+        int l = str.length();
+        String finalStr = "";
+        for(char c : str.toCharArray()){
+            if(Character.isLetterOrDigit(c)|| c==32)
+                finalStr+=c;
+        }
+        return finalStr;
     }
 }

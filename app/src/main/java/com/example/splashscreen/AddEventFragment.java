@@ -18,6 +18,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -27,6 +31,9 @@ public class AddEventFragment extends Fragment {
     private EditText eventName, venue, eventDate1, eventDate2, eventTime, description;
     private AutoCompleteTextView hostClub;
     private int year, month, day, hours, minutes;
+
+    private FirebaseDatabase rootNode;
+    private DatabaseReference reference;
 
     public AddEventFragment() {
         // Required empty public constructor
@@ -133,12 +140,29 @@ public class AddEventFragment extends Fragment {
                 } else if (TextUtils.isEmpty(textDescription)) {
                     Toast.makeText(AddEventFragment.this.getActivity(), "Description field can't be empty!", Toast.LENGTH_SHORT).show();
                 } else
-                    Toast.makeText(AddEventFragment.this.getActivity(), "Successfully registered event!".concat(user), Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddEventFragment.this.getActivity(), "Successfully registered event!", Toast.LENGTH_LONG).show();
                     EventHelper ticket = new EventHelper(textEventName, textEventDate1, textEventDate2, textHostClub,
                             textVenue, textEventTime, textDescription, user);
+
+                    //Add event to database
+                    rootNode = FirebaseDatabase.getInstance();
+                    reference = rootNode.getReference("events");
+                    reference.child(removeSpecialChars(textEventName)).setValue(ticket);
             }
         });
         // Inflate the layout for this fragment
         return rootView;
+    }
+
+    //remove special chars
+    private String removeSpecialChars(String str)
+    {
+        int l = str.length();
+        String finalStr = "";
+        for(char c : str.toCharArray()){
+            if(Character.isLetterOrDigit(c)|| c==32)
+                finalStr+=c;
+        }
+        return finalStr;
     }
 }
