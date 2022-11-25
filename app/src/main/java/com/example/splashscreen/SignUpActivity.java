@@ -68,6 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 email = inputEmail.getText().toString();
                 password = inputPassword.getText().toString();
                 confirmPassword = inputConfirmPassword.getText().toString();
