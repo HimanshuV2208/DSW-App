@@ -15,6 +15,9 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Calendar;
 
 public class LNFFragment extends Fragment {
@@ -24,6 +27,8 @@ public class LNFFragment extends Fragment {
 
     private RadioGroup radioLnF;
 
+    private FirebaseDatabase rootNode;
+    private DatabaseReference reference;
     public LNFFragment() {
         // Required empty public constructor
     }
@@ -90,6 +95,11 @@ public class LNFFragment extends Fragment {
                     LostAndFoundHelper ticket = new LostAndFoundHelper(textItemLost, infoType, textLostDate,
                             textLastSeen, textDescription, user);
                     // TODO: 25-11-2022 put this ticket in LNF database
+                    rootNode = FirebaseDatabase.getInstance();
+                    reference = rootNode.getReference("users");
+
+                    reference.child(textItemLost).setValue(ticket);
+
                 }
             }
         });
