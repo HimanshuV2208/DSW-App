@@ -33,8 +33,8 @@ public class FeedbackFragment extends Fragment {
         description = view.findViewById(R.id.description);
         subject = view.findViewById(R.id.subject);
         radioFeedbackOrComplaint = view.findViewById(R.id.radio_group_feedback);
-        int complaintId = (R.id.complaint_radio);
-        int feedbackId = (R.id.feedback_radio);
+        final int complaintId = (R.id.complaint_radio);
+        final int feedbackId = (R.id.feedback_radio);
 
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override

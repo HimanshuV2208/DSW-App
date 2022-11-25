@@ -12,6 +12,7 @@ import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -21,6 +22,8 @@ public class LNFFragment extends Fragment {
     private Button login_button;
     private EditText item_lost,lost_date,last_seen,description;
     private int year,month,day;
+
+    private RadioGroup radioLnF;
 
     public LNFFragment() {
         // Required empty public constructor
@@ -39,6 +42,9 @@ public class LNFFragment extends Fragment {
         item_lost = view.findViewById(R.id.item_lost);
         lost_date = view.findViewById(R.id.lost_date);
         last_seen = view.findViewById(R.id.last_seen);
+        radioLnF = view.findViewById(R.id.radio_group_lnf);
+        final int lostId = (R.id.lost_radio);
+        final int foundId = (R.id.found_radio);
 
         lost_date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,12 +66,15 @@ public class LNFFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                String text_description=description.getText().toString();
-                String text_item_lost=item_lost.getText().toString();
-                String text_lost_date=lost_date.getText().toString();
-                String text_last_seen=last_seen.getText().toString();
-
-                if (TextUtils.isEmpty(text_item_lost)) {
+                String text_description = description.getText().toString();
+                String text_item_lost = item_lost.getText().toString();
+                String text_lost_date = lost_date.getText().toString();
+                String text_last_seen = last_seen.getText().toString();
+                int selectedId = radioLnF.getCheckedRadioButtonId();
+                String infoType = "";
+                if(selectedId == -1){
+                    Toast.makeText(getActivity(), "Choose info type!", Toast.LENGTH_SHORT).show();
+                }else if (TextUtils.isEmpty(text_item_lost)) {
                     Toast.makeText(getActivity(), "Item Lost field can't be empty!", Toast.LENGTH_SHORT).show();
                 } else if(TextUtils.isEmpty(text_lost_date)){
                     Toast.makeText(getActivity(), "Lost Date field can't be empty!", Toast.LENGTH_SHORT).show();
@@ -73,8 +82,12 @@ public class LNFFragment extends Fragment {
                     Toast.makeText(getActivity(), "Last Seen field can't be empty!", Toast.LENGTH_SHORT).show();
                 } else if(TextUtils.isEmpty(text_description)) {
                     Toast.makeText(getActivity(), "Description field can't be empty!", Toast.LENGTH_SHORT).show();
-                } else
-                    Toast.makeText(getActivity(), "Successfully registered", Toast.LENGTH_LONG).show();
+                } else{
+                    if(selectedId == lostId) infoType = "lost";
+                    else if(selectedId == foundId) infoType = "found";
+                    Toast.makeText(getActivity(), "Successfully registered ".concat(infoType).concat(" item!")
+                            , Toast.LENGTH_LONG).show();
+                }
             }
         });
 
