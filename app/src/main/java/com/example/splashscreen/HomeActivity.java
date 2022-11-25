@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     private boolean isAdmin;
+    protected UserHelper currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
 
         //gets the current user object
-        UserHelper currentUser = (UserHelper)getIntent().getSerializableExtra("class");
+        currentUser = (UserHelper)getIntent().getSerializableExtra("class");
 
         //options to hide from normal user
         //these are only visible to admin

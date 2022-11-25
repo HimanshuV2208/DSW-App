@@ -11,22 +11,22 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
 public class AddEventFragment extends Fragment {
 
-    private Button login_button;
-    private EditText event_name,host_club,venue,event_date1,event_date2,event_time,description;
-
-    private int year,month,day,hours,minutes;
+    private EditText eventName, venue, eventDate1, eventDate2, eventTime, description;
+    private AutoCompleteTextView hostClub;
+    private int year, month, day, hours, minutes;
 
     public AddEventFragment() {
         // Required empty public constructor
@@ -40,16 +40,22 @@ public class AddEventFragment extends Fragment {
 
         final Calendar calendar = Calendar.getInstance();
 
-        login_button = rootView.findViewById(R.id.login_button);
+        Button loginButton = rootView.findViewById(R.id.login_button);
         description = rootView.findViewById(R.id.description);
-        event_name = rootView.findViewById(R.id.event_name);
-        host_club = rootView.findViewById(R.id.host_club);
+        eventName = rootView.findViewById(R.id.event_name);
+        hostClub = rootView.findViewById(R.id.host_club);
         venue = rootView.findViewById(R.id.venue);
-        event_date1 = rootView.findViewById(R.id.event_date1);
-        event_date2 = rootView.findViewById(R.id.event_date2);
-        event_time = rootView.findViewById(R.id.event_time);
+        eventDate1 = rootView.findViewById(R.id.event_date1);
+        eventDate2 = rootView.findViewById(R.id.event_date2);
+        eventTime = rootView.findViewById(R.id.event_time);
+        final String user = ((HomeActivity)getActivity()).currentUser.getEmail();
 
-        event_date1.setOnClickListener(view -> {
+        String[] clubs = getActivity().getApplicationContext().getResources().getStringArray(R.array.clubs);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.dropdown_item, clubs);
+        hostClub = (AutoCompleteTextView)(rootView.findViewById(R.id.host_club));
+        hostClub.setAdapter(adapter);
+
+        eventDate1.setOnClickListener(view -> {
             year = calendar.get(Calendar.YEAR);
             month = calendar.get(Calendar.MONTH);
             day = calendar.get(Calendar.DAY_OF_MONTH);
@@ -58,13 +64,13 @@ public class AddEventFragment extends Fragment {
                 @SuppressLint("SetTextI18n")
                 @Override
                 public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                    event_date1.setText(i2+"/"+(i1+1)+"/"+i);
+                    eventDate1.setText(i2+"/"+(i1+1)+"/"+i);
                 }
             }, year, month, day);
             datePickerDialog.show();
         });
 
-        event_date2.setOnClickListener(view -> {
+        eventDate2.setOnClickListener(view -> {
             year = calendar.get(Calendar.YEAR);
             month = calendar.get(Calendar.MONTH);
             day = calendar.get(Calendar.DAY_OF_MONTH);
@@ -73,13 +79,13 @@ public class AddEventFragment extends Fragment {
                 @SuppressLint("SetTextI18n")
                 @Override
                 public void onDateSet(DatePicker datePicker, int i3, int i4, int i5) {
-                    event_date2.setText(i5+"/"+(i4+1)+"/"+i3);
+                    eventDate2.setText(i5+"/"+(i4+1)+"/"+i3);
                 }
             }, year, month, day);
             datePickerDialog1.show();
         });
 
-        event_time.setOnClickListener(new View.OnClickListener() {
+        eventTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 hours = calendar.get(Calendar.HOUR_OF_DAY);
@@ -93,42 +99,44 @@ public class AddEventFragment extends Fragment {
                         calendar.setTimeZone(TimeZone.getDefault());
                         SimpleDateFormat format= new SimpleDateFormat("k:mm");
                         String time= format.format(calendar.getTime());
-                        event_time.setText(time);
+                        eventTime.setText(time);
                     }
                 },hours,minutes,true);
                 timePickerDialog.show();
             }
         });
 
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                String textDescription = description.getText().toString();
+                String textEventName = eventName.getText().toString();
+                String textEventDate1 = eventDate1.getText().toString();
+                String textEventDate2 = eventDate2.getText().toString();
+                String textHostClub = hostClub.getText().toString();
+                String textVenue = venue.getText().toString();
+                String textEventTime = eventTime.getText().toString();
 
-        login_button.setOnClickListener(view -> {
-
-            String text_description=description.getText().toString();
-            String text_event_name=event_name.getText().toString();
-            String text_event_date1=event_date1.getText().toString();
-            String text_event_date2=event_date2.getText().toString();
-            String text_host_club=host_club.getText().toString();
-            String text_venue=venue.getText().toString();
-            String text_event_time=event_time.getText().toString();
-
-            if (TextUtils.isEmpty(text_event_name)) {
-                Toast.makeText(getActivity(), "Event Name can't be empty!", Toast.LENGTH_SHORT).show();
-            } else if(TextUtils.isEmpty(text_host_club)){
-                Toast.makeText(getActivity(), "Host Club field can't be empty!", Toast.LENGTH_SHORT).show();
-            } else if(TextUtils.isEmpty(text_venue)){
-                Toast.makeText(getActivity(), "Venue can't be empty!", Toast.LENGTH_SHORT).show();
-            } else if(TextUtils.isEmpty(text_event_date1)){
-                Toast.makeText(getActivity(), "From can't be empty!", Toast.LENGTH_SHORT).show();
-            } else if(TextUtils.isEmpty(text_event_date2)){
-                Toast.makeText(getActivity(), "To can't be empty!", Toast.LENGTH_SHORT).show();
-            } else if(TextUtils.isEmpty(text_event_time)){
-                Toast.makeText(getActivity(), "Event Time can't be empty!", Toast.LENGTH_SHORT).show();
-            } else if(TextUtils.isEmpty(text_description)) {
-                Toast.makeText(getActivity(), "Description field can't be empty!", Toast.LENGTH_SHORT).show();
-            } else
-                Toast.makeText(getActivity(), "Successfully registered", Toast.LENGTH_LONG).show();
-
+                if (TextUtils.isEmpty(textEventName)) {
+                    Toast.makeText(AddEventFragment.this.getActivity(), "Event Name can't be empty!", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(textHostClub)) {
+                    Toast.makeText(AddEventFragment.this.getActivity(), "Host Club field can't be empty!", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(textVenue)) {
+                    Toast.makeText(AddEventFragment.this.getActivity(), "Venue can't be empty!", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(textEventDate1)) {
+                    Toast.makeText(AddEventFragment.this.getActivity(), "From can't be empty!", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(textEventDate2)) {
+                    Toast.makeText(AddEventFragment.this.getActivity(), "To can't be empty!", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(textEventTime)) {
+                    Toast.makeText(AddEventFragment.this.getActivity(), "Event Time can't be empty!", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(textDescription)) {
+                    Toast.makeText(AddEventFragment.this.getActivity(), "Description field can't be empty!", Toast.LENGTH_SHORT).show();
+                } else
+                    Toast.makeText(AddEventFragment.this.getActivity(), "Successfully registered event!".concat(user), Toast.LENGTH_LONG).show();
+                    EventHelper ticket = new EventHelper(textEventName, textEventDate1, textEventDate2, textHostClub,
+                            textVenue, textEventTime, textDescription, user);
+            }
         });
         // Inflate the layout for this fragment
         return rootView;

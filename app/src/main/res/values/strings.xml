@@ -42,6 +42,40 @@
         <item>N/A</item>
     </string-array>
 
+    <string-array name="clubs">
+        <item>Data Science</item>
+        <item>Computer Science</item>
+        <item>Robotics Club</item>
+        <item>Aeromodelling Club</item>
+        <item>Astronomy Club</item>
+        <item>Economics and Finances Club</item>
+        <item>Technical Communication House</item>
+        <item>Tinkering Lab </item>
+        <item>Consultancy Club</item>
+        <item>Infosec</item>
+        <item>Entrepreneurship</item>
+        <item>Classical Music and Dance Club</item>
+        <item>Creative Arts Club</item>
+        <item>Dance Club</item>
+        <item>Debating Club</item>
+        <item>Drama Club</item>
+        <item>English Language Activities Club</item>
+        <item>English Press Club</item>
+        <item>Film Making Club</item>
+        <item>Hindi Language Activities Club</item>
+        <item>Hindi Press Club</item>
+        <item>Music Club</item>
+        <item>Photography Club</item>
+        <item>Poetry Club</item>
+        <item>Think India</item>
+        <item>NSS</item>
+        <item>Travel and Heritage Visit Club</item>
+        <item>Electoral Literacy</item>
+        <item>Quiz Club</item>
+        <item>The Mavericks</item>
+        <item>N/A</item>
+    </string-array>
+
     <string-array name="hostels">
         <item>PARIJAT</item>
         <item>CHAITANYA</item>
