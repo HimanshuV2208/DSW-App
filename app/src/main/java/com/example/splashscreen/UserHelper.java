@@ -7,12 +7,23 @@ import java.io.Serializable;
 public class UserHelper implements Serializable {
     private String email,password;
     private boolean isFaculty, isGeneralSec, isAdmin;
-    private String name, id, technicalClub, culturalClub, branch, year, hostel;
+    private String name;
+    private String id;
+    private String technicalClub;
+    private String culturalClub;
+    private String branch;
+    private String year;
+    private String hostel;
+    private String phoneNo;
 
-    public UserHelper(String email,String password) {
+    public UserHelper(String email, String password, String name, String technicalClub, String culturalClub, String hostel, String phoneNo) {
+        this.email = email;
         this.password = password;
-        this.email=email;
-        this.isAdmin=false;
+        this.name = name;
+        this.technicalClub = technicalClub;
+        this.culturalClub = culturalClub;
+        this.hostel = hostel;
+        this.phoneNo = phoneNo;
     }
 
     public UserHelper() {
@@ -64,4 +75,12 @@ public class UserHelper implements Serializable {
     public String getHostel() { return hostel; }
 
     public void setHostel(String hostel) { this.hostel = hostel; }
+
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+    }
 }

@@ -1,235 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/signup_screen"
-    tools:context=".SignUpActivity">
+    android:background="@drawable/signup_screen">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailLayout"
-        style="@style/LoginTextInputOuterFieldStyle"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="150dp"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="250dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailEditText"
-            style="@style/LoginTextInputInnerFieldStyle"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Type your Email"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
+            tools:context=".SignUpActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordLayout"
-        style="@style/LoginTextInputOuterFieldStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailLayout"
-        app:passwordToggleEnabled="true">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordEditText"
-            style="@style/LoginTextInputInnerFieldStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Type Your Password"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/confirmPasswordLayout"
-        style="@style/LoginTextInputOuterFieldStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordLayout"
-        app:passwordToggleEnabled="true">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/confirmPasswordEditText"
-            style="@style/LoginTextInputInnerFieldStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Retype Your Password"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nameLayout"
-        style="@style/LoginTextInputOuterFieldStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/confirmPasswordLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nameEditText"
-            style="@style/LoginTextInputInnerFieldStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Your Name"
-            android:inputType="textPersonName"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/clubContainer"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameLayout"
-        android:weightSum="1"
-        android:baselineAligned="false">
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:boxStrokeColor="@color/black"
-            app:hintTextColor="@color/black"
-            android:layout_weight="0.5">
-
-            <AutoCompleteTextView
-                android:id="@+id/technicalClubTextView"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailLayout"
+                style="@style/LoginTextInputOuterFieldStyle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="none"
-                android:hint="Enter Club 1"
-                android:textSize="14sp"
-                android:singleLine="true"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:scrollHorizontally="true"
-                android:dropDownWidth="250dp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEditText"
+                    style="@style/LoginTextInputInnerFieldStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Type your Email"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:boxStrokeColor="@color/black"
-            app:hintTextColor="@color/black"
-            android:layout_weight="0.5">
-
-            <AutoCompleteTextView
-                android:id="@+id/culturalClubTextView"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordLayout"
+                style="@style/LoginTextInputOuterFieldStyle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="none"
-                android:hint="Enter Club 2"
-                android:textSize="14sp"
-                android:singleLine="true"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:scrollHorizontally="true"
-                android:dropDownWidth="250dp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emailLayout"
+                app:passwordToggleEnabled="true">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEditText"
+                    style="@style/LoginTextInputInnerFieldStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Type Your Password"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/confirmPasswordLayout"
+                style="@style/LoginTextInputOuterFieldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/passwordLayout"
+                app:passwordToggleEnabled="true">
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        app:boxStrokeColor="@color/black"
-        app:hintTextColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clubContainer"
-        android:id="@+id/hostelContainer">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/confirmPasswordEditText"
+                    style="@style/LoginTextInputInnerFieldStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Retype Your Password"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <AutoCompleteTextView
-            android:id="@+id/hostelTextView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="none"
-            android:hint="Choose Hostel"
-            android:textSize="14sp"
-            android:singleLine="true"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:scrollHorizontally="true"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameLayout"
+                style="@style/LoginTextInputOuterFieldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/confirmPasswordLayout">
 
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEditText"
+                    style="@style/LoginTextInputInnerFieldStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Your Name"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signUpButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:background="@color/yellow"
-        android:text="Sign Up"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hostelContainer" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/clubContainer"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameLayout"
+                android:weightSum="1"
+                android:baselineAligned="false">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpButton" >
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/black"
+                    android:layout_weight="0.5">
 
-        <TextView
-            android:id="@+id/alrRegTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Already Registered? " />
+                    <AutoCompleteTextView
+                        android:id="@+id/technicalClubEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"
+                        android:hint="Enter Club 1"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:scrollHorizontally="true"
+                        android:dropDownWidth="250dp"/>
 
-        <TextView
-            android:id="@+id/clickableTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blue"
-            android:text=" Sign In! "
-            android:textStyle="italic"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/black"
+                    android:layout_weight="0.5">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <AutoCompleteTextView
+                        android:id="@+id/culturalClubEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"
+                        android:hint="Enter Club 2"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:scrollHorizontally="true"
+                        android:dropDownWidth="250dp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clubContainer"
+                android:id="@+id/hostelContainer">
+
+                <AutoCompleteTextView
+                    android:id="@+id/hostelEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="none"
+                    android:hint="Choose Hostel"
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:scrollHorizontally="true"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hostelContainer"
+                android:id="@+id/phoneLayout"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/LoginTextInputOuterFieldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/black"
+                    android:layout_weight="0.7"
+                    android:paddingRight="10dp"
+                    android:layout_marginVertical="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phoneEditText"
+                        style="@style/LoginTextInputInnerFieldStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter phone number"
+                        android:inputType="phone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/getOTPButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/yellow"
+                    android:text="Send OTP"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_weight="0.3"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/otpLayout"
+                style="@style/LoginTextInputOuterFieldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phoneLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/otpEditText"
+                    style="@style/LoginTextInputInnerFieldStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="OTP"
+                    android:inputType="textPersonName"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/signUpButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:background="@color/yellow"
+                android:text="Verify and Sign Up"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/otpLayout" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signUpButton"
+                android:layout_marginVertical="15dp">
+
+                <TextView
+                    android:id="@+id/alrRegTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Already Registered? " />
+
+                <TextView
+                    android:id="@+id/clickableTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"
+                    android:text=" Sign In! "
+                    android:textStyle="italic"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
