@@ -1,5 +1,14 @@
 package com.example.splashscreen;
 
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,14 +18,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -104,12 +105,14 @@ public class HomeActivity extends AppCompatActivity {
                     loadFragment(new HostelFragment());
                 else if(id == R.id.optionNewEvent)
                     loadFragment(new AddEventFragment());
-                else if(id == R.id.optionSignOut)
-                    Toast.makeText(getApplicationContext(), "GTFO", Toast.LENGTH_SHORT).show();
+                else if(id == R.id.optionSignOut){
+                    Intent goSignIn = new Intent(HomeActivity.this, SignInActivity.class);
+                    startActivity(goSignIn);
+                    finish();
+                }
 
                 //close drawer when user chooses option
                 drawerLayout.closeDrawer(GravityCompat.START);
-
                 return true;
             }
         });

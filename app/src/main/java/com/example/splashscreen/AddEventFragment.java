@@ -4,9 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +15,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -141,8 +140,8 @@ public class AddEventFragment extends Fragment {
                     Toast.makeText(AddEventFragment.this.getActivity(), "Description field can't be empty!", Toast.LENGTH_SHORT).show();
                 } else
                     Toast.makeText(AddEventFragment.this.getActivity(), "Successfully registered event!", Toast.LENGTH_LONG).show();
-                    EventHelper ticket = new EventHelper(textEventName, textEventDate1, textEventDate2, textHostClub,
-                            textVenue, textEventTime, textDescription, user);
+                    EventHelper ticket = new EventHelper(user, textDescription, textEventDate2, textEventDate1, textEventName, textEventTime, textHostClub,
+                            textVenue);
 
                     //Add event to database
                     rootNode = FirebaseDatabase.getInstance();

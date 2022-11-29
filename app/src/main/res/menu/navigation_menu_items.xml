@@ -49,7 +49,7 @@
         android:id="@+id/optionNewEvent"
         android:icon="@drawable/ic_baseline_house_24"/>
 
-    <item android:title="GTFO"
+    <item android:title="Sign Out"
         android:id="@+id/optionSignOut"
         android:icon="@drawable/ic_baseline_logout_24"/>
 </menu>

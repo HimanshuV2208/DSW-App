@@ -36,8 +36,6 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-
-
         //drop down menu for cultural clubs
         String[] culturalClubs = getApplicationContext().getResources().getStringArray(R.array.cultural_clubs);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, R.layout.dropdown_item, culturalClubs);

@@ -1,16 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context=".AboutDSWFragment">
+    tools:context=".AboutDSWFragment"
+    android:background="@drawable/gradient">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="About DSW"
-        android:textSize="50sp" />
+        android:orientation="vertical"
+        android:showDividers="middle|end"
+        android:divider="@drawable/divider_plain_vertical"
+        android:layout_marginHorizontal="10dp">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="1">
+
+            <TextView
+                style="@style/HeadingText"
+                android:text="DSW"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_weight=".4"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/mnit_logo"
+                android:layout_weight="0.6"
+                android:contentDescription="MNIT Logo"
+                android:layout_gravity="center_horizontal">
+            </ImageView>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/about_dsw_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/about_dsw"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/Key_Tasks_of_Dean_Student_Welfare_Office_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_001"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_002"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_003"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_004"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_005"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_006"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_007"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_008" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_009" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_010" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_011" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_012" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_013" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_014" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_015" />
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_016" />
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,16 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SportsFragment"
-    android:gravity="center">
+    android:background="@drawable/gradient">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SPORTS"
-        android:textSize="50sp"/>
+        android:orientation="vertical"
+        android:showDividers="middle|end"
+        android:divider="@drawable/divider_plain_vertical"
+        android:layout_marginHorizontal="10dp">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="1">
+
+            <TextView
+                style="@style/HeadingText"
+                android:text="SPORTS"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_weight=".4"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/mnit_logo"
+                android:layout_weight="0.6"
+                android:contentDescription="MNIT Logo"
+                android:layout_gravity="center_horizontal">
+            </ImageView>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/home_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/home"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/vision_statement_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/vision_statement"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/mission_statement_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/mission_statement"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/fit_mnit_fit_nation"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/objectives_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_1"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_2"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_3"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_4"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_5"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_6"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_7"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/organisation_of_games_and_sports_tournaments_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/organisation_of_games_and_sports_tournaments"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/all_india_inter_NIT_sports_tournaments_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/all_india_inter_NIT_sports_tournaments"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/inter_branch_sports_tournament_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/inter_branch_sports_tournament"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/annual_athletic_meet_AAM_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/annual_athletic_meet_AAM"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/sports_timings_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/sports_timings"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/evening"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/office_timings"/>
+    </LinearLayout>
+
+</ScrollView>

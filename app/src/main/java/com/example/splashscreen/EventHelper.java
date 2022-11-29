@@ -10,9 +10,8 @@ public class EventHelper implements Serializable {
 
     public EventHelper(){ }
 
-    public EventHelper(String textEventName, String textEventDateStart,
-                       String textEventDateEnd, String textHostClub, String textVenue,
-                       String textEventTime, String textDescription, String registeringUserInfo) {
+    public EventHelper(String registeringUserInfo, String textDescription, String textEventDateEnd, String textEventDateStart, String textEventName,
+                       String textEventTime, String textHostClub, String textVenue) {
         this.textDescription = textDescription;
         this.textEventName = textEventName;
         this.textEventDateStart = textEventDateStart;

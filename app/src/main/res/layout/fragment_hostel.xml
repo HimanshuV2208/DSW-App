@@ -1,16 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HostelFragment"
-    android:gravity="center">
+    android:background="@drawable/gradient">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HOSTELS"
-        android:textSize="50sp"/>
+        android:orientation="vertical"
+        android:showDividers="middle|end"
+        android:divider="@drawable/divider_plain_vertical"
+        android:layout_marginHorizontal="10dp">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="1">
+
+            <TextView
+                style="@style/HeadingText"
+                android:text="HOSTELS"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_weight=".4"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/mnit_logo"
+                android:layout_weight="0.6"
+                android:contentDescription="MNIT Logo"
+                android:layout_gravity="center_horizontal">
+            </ImageView>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/home_text"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/home_1"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/hostel_details_text"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/boys_hostels_text"
+            android:textSize="20sp"/>
+
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_01"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_02"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_03"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_04"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_05"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_06"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_07"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_08"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_09"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_10"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_11"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/total_boys"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/girls_hostels_text"
+            android:textSize="20sp"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_12"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_13"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_14"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_15"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/total_girls"/>
+
+        <TextView
+            style="@style/SubHeadingText"
+            android:text="@string/helpline_text"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_16"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_17"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_18"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_18.2"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_19"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_20"/>
+        <TextView
+            style="@style/BodyText"
+            android:text="@string/_21"/>
+
+    </LinearLayout>
+
+</ScrollView>

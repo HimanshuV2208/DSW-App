@@ -20,6 +20,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignInActivity extends AppCompatActivity {
 
+    //variables for back button pressed check
+    private static final int TIME_TO_PRESS_BACK = 2000;
+    private long backPressed;
+
     private TextView signUpText;
     private EditText inputEmail, inputPassword;
     private AppCompatButton signInBtn;
@@ -139,5 +143,18 @@ public class SignInActivity extends AppCompatActivity {
                 finalStr+=c;
         }
         return finalStr;
+    }
+
+    @Override
+    public void onBackPressed(){
+        //press back twice to close the app
+        if(TIME_TO_PRESS_BACK + backPressed > System.currentTimeMillis()){
+            super.onBackPressed();
+            return;
+        }else{
+            Toast.makeText(getApplicationContext(), "Press Back again to Exit!",
+                    Toast.LENGTH_SHORT).show();
+        }
+        backPressed = System.currentTimeMillis();
     }
 }

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
-    android:background="@drawable/gradient">
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/nameText"
@@ -15,6 +16,15 @@
         android:text="Dean Student Welfare"
         android:textSize="50sp"
         android:textStyle="bold"
-        android:alpha="1.0" />
+        android:alpha="1.0"
+        android:layout_marginTop="150dp"/>
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/mnit_logo"
+        android:layout_gravity="center">
+    </ImageView>
 
 </LinearLayout>
