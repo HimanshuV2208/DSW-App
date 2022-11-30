@@ -69,6 +69,8 @@ public class HomeActivity extends AppCompatActivity {
         View headerView = navigationView.getHeaderView(0);
         TextView username = headerView.findViewById(R.id.username);
         username.setText(currentUser.getEmail());
+        TextView username2 = headerView.findViewById(R.id.username2);
+        username2.setText(currentUser.getName());
 
         //display top toolbar and add side navigation bar
         setSupportActionBar(toolbar);
