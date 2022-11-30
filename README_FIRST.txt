@@ -1,5 +1,5 @@
 Steps to use app
-STEP 1-Install apk from the folder in your android device
+STEP 1-Install app debug .apk in your android device
 STEP 2-First sign up ,using mnit mail id
 STEP 3-You would be asked to grant SMS access so please provide it(P.S. App may crash once)
 STEP 4-Make sure your current SIM has SMS BALANCE to send and verify OTP.
