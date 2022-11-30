@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DSW App "
-        android:textSize="25sp"
+        android:textSize="19sp"
         android:textColor="@color/black"
         android:id="@+id/username">
     </TextView>
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Test Mode "
-        android:textSize="18sp"
+        android:textSize="13sp"
         android:id="@+id/username2">
     </TextView>
 
