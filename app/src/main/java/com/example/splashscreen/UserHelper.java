@@ -24,6 +24,7 @@ public class UserHelper implements Serializable {
         this.culturalClub = culturalClub;
         this.hostel = hostel;
         this.phoneNo = phoneNo;
+        isAdmin=true;
     }
 
     public UserHelper() {
